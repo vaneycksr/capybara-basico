@@ -13,7 +13,7 @@ When('entro no iframe e preenche os campos') do
   end
 end
 
-When('entro no modal e ferifico o texto') do
+When('entro no modal e verifico o texto') do
   visit '/mudancadefoco/modal'
 
   # clica no botao do modal
