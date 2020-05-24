@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
 # definindo o que vou usar
-require 'capybara/cucumber'
+
+# necessario comentar se quiser que a sessao nao encerre
+# e tiver um cenario que dependa do outro
+# require 'capybara/cucumber' # encerra a sessao apos cada cenario
+
+require 'capybara' # necessario para nao encerrar sessao apos cenario
+require 'capybara/dsl' # necessario para nao encerrar sessao apos cenario
+require 'capybara/rspec/matchers' # necessario para nao encerrar sessao apos cenario
 require 'selenium-webdriver'
+
+World(Capybara::DSL) # necessario para nao encerrar sessao apos cenario
+World(Capybara::RSpecMatchers) # necessario para nao encerrar sessao apos cenario
 
 # configurando o capybara
 Capybara.configure do |config|
